@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prepare the SCHOL^R Environment • scholR</title>
+<title>Streamlining academic work flows • scholR</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Prepare the SCHOL^R Environment">
+<script src="pkgdown.js"></script><meta property="og:title" content="Streamlining academic work flows">
 <meta property="og:description" content="Help in the installation of all the packages necessary for a full implementation of the SCOL^R work environment.">
 <meta property="og:image" content="/logo.svg">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -104,6 +104,7 @@
 <li>
 <a href="https://miktex.org/download">MiKTeX</a> if you want the complete standalone version for LaTeX</li>
 </ul>
+<p>If you also intend to build packages with vignettes, you will also need <em><a href="https://sourceforge.net/projects/qpdf/">qpdf</a></em>. To install this piece of software on Windows, download the version appropriate for your system (32 or 64 bit), copy and paste it in you program files folder. Then, open the start menu, type “edit the system environment variables” to open the System Properties, and at the bottom of the “Advanced” tab click “Environment variables”. Find the “Path” entry under “System variables” and click “Edit” to write down the path to the bin folder of <em>qpfd</em> (e.g. C:/Program Files/qpdf-10.0.4/bin). Then, re-start R so it picks up the modified path.</p>
 <p>For Mac OS X:</p>
 <ul>
 <li>
@@ -115,12 +116,7 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>Before you can install <em>scholR</em> itself, you will also need to install from CRAN the following R packages:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"knitr"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"blogdown"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"webshot"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"knitr"</span>, <span class="st">"devtools"</span>, <span class="st">"BiocManager"</span>, <span class="st">"blogdown"</span>, <span class="st">"webshot"</span>, <span class="st">"tidyverse"</span><span class="op">)</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p>Then, install <em>scholR</em> from its GitHub public repository:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install.github</span><span class="op">(</span><span class="st">"NicolasJBM/scholR"</span><span class="op">)</span></code></pre></div>
@@ -290,17 +286,19 @@
 <p>The <em>SCHOL^R</em> environment is composed of the following toolboxes (those flagged as “project” are not operational yet):</p>
 <ul>
 <li>
-<em><a href="https://github.com/NicolasJBM/fmtR">fmtR</a></em>: functions quickly formating numbers and statistics.</li>
+<em><a href="https://github.com/NicolasJBM/collectR">collectR</a></em> (project): functions and applications supporting data collection and storage.</li>
 <li>
 <em><a href="https://github.com/NicolasJBM/lexR">lexR</a></em>: functions supporting lexical analyses.</li>
 <li>
 <em><a href="https://github.com/NicolasJBM/bibliogR">bibliogR</a></em>: functions and applications supporting literature search and citations.</li>
 <li>
-<em><a href="https://github.com/NicolasJBM/collectR">collectR</a></em> (project): functions and applications supporting data collection and storage.</li>
-<li>
 <em><a href="https://github.com/NicolasJBM/buildR">buildR</a></em>: functions and applications supporting variable transformation as well as the production and validation of constructs.</li>
 <li>
 <em><a href="https://github.com/NicolasJBM/modlR">modlR</a></em>: functions and applications supporting complex statistical estimations.</li>
+<li>
+<em><a href="https://github.com/NicolasJBM/simulR">simulR</a></em> (project): functions and applications supporting business simulations.</li>
+<li>
+<em><a href="https://github.com/NicolasJBM/fmtR">fmtR</a></em>: functions quickly formating numbers and statistics.</li>
 <li>
 <em><a href="https://github.com/NicolasJBM/tablR">tablR</a></em>: functions supporting table manipulation.</li>
 <li>
@@ -308,11 +306,9 @@
 <li>
 <em><a href="https://github.com/NicolasJBM/writR">writR</a></em>: functions and applications supporting the production of HTML or PDF documents (presentations, papers, books).</li>
 <li>
-<em><a href="https://github.com/NicolasJBM/reviewR">reviewR</a></em> (project): functions and applications supporting reviewing process.</li>
-<li>
-<em><a href="https://github.com/NicolasJBM/simulR">simulR</a></em> (project): functions and applications supporting business simulations.</li>
-<li>
 <em><a href="https://github.com/NicolasJBM/teachR">teachR</a></em>: functions and applications supporting test generation, grading, and feedback.</li>
+<li>
+<em><a href="https://github.com/NicolasJBM/reviewR">reviewR</a></em> (project): functions and applications supporting reviewing process.</li>
 <li>
 <em><a href="https://github.com/NicolasJBM/Rtist">Rtist</a></em> (project): functions and applications helping the creation of mathematical of data art.</li>
 </ul>
@@ -350,6 +346,8 @@
 <ul class="list-unstyled">
 <li><a href="https://github.com/NicolasJBM/scholR/actions"><img src="https://github.com/NicolasJBM/scholR/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://www.codefactor.io/repository/github/nicolasjbm/scholr"><img src="https://www.codefactor.io/repository/github/nicolasjbm/scholr/badge" alt="CodeFactor"></a></li>
+<li><a href="https://opensource.org/licenses/GPL-3.0"><img src="https://img.shields.io/badge/License-GPL3.0-yellow.svg" alt="License: GPL3"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
 </ul>
 </div>
 </div>

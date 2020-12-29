@@ -3,6 +3,10 @@
 
 [![R-CMD-check](https://github.com/NicolasJBM/scholR/workflows/R-CMD-check/badge.svg)](https://github.com/NicolasJBM/scholR/actions)
 [![CodeFactor](https://www.codefactor.io/repository/github/nicolasjbm/scholr/badge)](https://www.codefactor.io/repository/github/nicolasjbm/scholr)
+[![License:
+GPL3](https://img.shields.io/badge/License-GPL3.0-yellow.svg)](https://opensource.org/licenses/GPL-3.0)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
 # scholR <img src="man/figures/logo.svg" align="right" width="120" />
@@ -41,6 +45,17 @@ For Windows:
   - [MiKTeX](https://miktex.org/download) if you want the complete
     standalone version for LaTeX
 
+If you also intend to build packages with vignettes, you will also need
+*[qpdf](https://sourceforge.net/projects/qpdf/)*. To install this piece
+of software on Windows, download the version appropriate for your system
+(32 or 64 bit), copy and paste it in you program files folder. Then,
+open the start menu, type “edit the system environment variables” to
+open the System Properties, and at the bottom of the “Advanced” tab
+click “Environment variables”. Find the “Path” entry under “System
+variables” and click “Edit” to write down the path to the bin folder of
+*qpfd* (e.g. C:/Program Files/qpdf-10.0.4/bin). Then, re-start R so it
+picks up the modified path.
+
 For Mac OS X:
 
   - [MacTeX](https://www.tug.org/mactex/) if you want the complete
@@ -52,12 +67,7 @@ Before you can install *scholR* itself, you will also need to install
 from CRAN the following R packages:
 
 ``` r
-install.packages("knitr")
-install.packages("devtools")
-install.packages("BiocManager")
-install.packages("blogdown")
-install.packages("webshot")
-install.packages("tidyverse")
+install.packages(c("knitr", "devtools", "BiocManager", "blogdown", "webshot", "tidyverse"), dependencies = TRUE)
 ```
 
 Then, install *scholR* from its GitHub public repository:
@@ -383,19 +393,21 @@ Note that this function does not install the toolboxes themselves.
 The *SCHOL^R* environment is composed of the following toolboxes (those
 flagged as “project” are not operational yet):
 
-  - *[fmtR](https://github.com/NicolasJBM/fmtR)*: functions quickly
-    formating numbers and statistics.
+  - *[collectR](https://github.com/NicolasJBM/collectR)* (project):
+    functions and applications supporting data collection and storage.
   - *[lexR](https://github.com/NicolasJBM/lexR)*: functions supporting
     lexical analyses.
   - *[bibliogR](https://github.com/NicolasJBM/bibliogR)*: functions and
     applications supporting literature search and citations.
-  - *[collectR](https://github.com/NicolasJBM/collectR)* (project):
-    functions and applications supporting data collection and storage.
   - *[buildR](https://github.com/NicolasJBM/buildR)*: functions and
     applications supporting variable transformation as well as the
     production and validation of constructs.
   - *[modlR](https://github.com/NicolasJBM/modlR)*: functions and
     applications supporting complex statistical estimations.
+  - *[simulR](https://github.com/NicolasJBM/simulR)* (project):
+    functions and applications supporting business simulations.
+  - *[fmtR](https://github.com/NicolasJBM/fmtR)*: functions quickly
+    formating numbers and statistics.
   - *[tablR](https://github.com/NicolasJBM/tablR)*: functions supporting
     table manipulation.
   - *[chartR](https://github.com/NicolasJBM/chartR)*: functions and
@@ -404,11 +416,9 @@ flagged as “project” are not operational yet):
   - *[writR](https://github.com/NicolasJBM/writR)*: functions and
     applications supporting the production of HTML or PDF documents
     (presentations, papers, books).
-  - *[reviewR](https://github.com/NicolasJBM/reviewR)* (project):
-    functions and applications supporting reviewing process.
-  - *[simulR](https://github.com/NicolasJBM/simulR)* (project):
-    functions and applications supporting business simulations.
   - *[teachR](https://github.com/NicolasJBM/teachR)*: functions and
     applications supporting test generation, grading, and feedback.
+  - *[reviewR](https://github.com/NicolasJBM/reviewR)* (project):
+    functions and applications supporting reviewing process.
   - *[Rtist](https://github.com/NicolasJBM/Rtist)* (project): functions
     and applications helping the creation of mathematical of data art.
