@@ -6,6 +6,11 @@
 \usage{
 list_functions(path = "R/", type = ".R")
 }
+\arguments{
+\item{path}{Character. Relative path to the directory where the files are.}
+
+\item{type}{Character. File extension to scan.}
+}
 \description{
 List all the packages used in a set of .R files (identified with ::)
 }

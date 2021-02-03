@@ -1,4 +1,4 @@
-#' @name install_environment
+#' @name prepare_environment
 #' @title Install scholR environment
 #' @author Nicolas Mangin
 #' @description Install all packages supporting the scholR universe in the appropriate versions.

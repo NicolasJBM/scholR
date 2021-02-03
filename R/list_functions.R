@@ -2,19 +2,25 @@
 #' @title Replace a pattern in several documents
 #' @author Nicolas Mangin
 #' @description List all the packages used in a set of .R files (identified with ::)
-#' @importFrom scholR dat_packages
-#' @importFrom dplyr arrange
-#' @importFrom dplyr filter
-#' @importFrom devtools install_cran
-#' @importFrom devtools install_version
-#' @importFrom devtools install_github
-#' @importFrom BiocManager install
-#' @importFrom blogdown install_hugo
-#' @importFrom webshot install_phantomjs
+#' @param path Character. Relative path to the directory where the files are.
+#' @param type Character. File extension to scan.
+#' @importFrom stringr str_detect
+#' @importFrom stringr str_extract_all
+#' @importFrom tibble tibble
+#' @importFrom tidyr separate
+#' @importFrom dplyr bind_rows
+#' @importFrom dplyr mutate
+#' @importFrom dplyr select
+#' @importFrom dplyr group_by
+#' @importFrom tidyr nest
+#' @importFrom purrr map
 #' @export
 
 
 list_functions <- function(path = "R/", type = ".R") {
+  
+  data <- NULL
+  
   files <- list.files(path)
   files <- files[stringr::str_detect(files, type)]
 

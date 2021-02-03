@@ -24,7 +24,9 @@ Imports:
   BiocManager,
   webshot,
   blogdown,
-  readr,
   dplyr,
+  utils,
   stringr,
-  utils
+  tibble,
+  tidyr,
+  purrr

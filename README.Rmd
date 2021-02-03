@@ -66,7 +66,7 @@ install.packages(c("knitr", "devtools", "BiocManager", "blogdown", "webshot", "t
 Then, install *scholR* from its GitHub public repository:  
 
 ```{r, eval = FALSE}
-devtools::install.github("NicolasJBM/scholR")
+devtools::install_github("NicolasJBM/scholR")
 ```
 
 
@@ -96,6 +96,12 @@ head(dat_packages) %>%
 ```
 
 Note that this function does not install the toolboxes themselves. 
+
+
+## Other functions
+
+This package also includes convenient functions to list all the packages and functions used in a set of files, *list_functions()*, and another function to batch replace a patter in a set of files, *replace_in_files()*.
+
 
 ## Toolboxes
 
