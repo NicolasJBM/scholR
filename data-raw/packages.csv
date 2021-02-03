@@ -186,3 +186,4 @@ order,use,origin,repository,package,version
 185,comminication,cran,,shinydashboard,0.7.1
 186,comminication,cran,,shinyjs,2.0.0
 187,comminication,cran,,shinyRGL,0.1.0
+188,comminication,cran,,bslib,
