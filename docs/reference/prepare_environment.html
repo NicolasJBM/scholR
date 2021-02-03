@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Replace a pattern in several documents — replace_in_files • scholR</title>
+<title>Install scholR environment — prepare_environment • scholR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Replace a pattern in several documents — replace_in_files" />
-<meta property="og:description" content="Replace the specified pattern of characters by another in all the documents within a path." />
+<meta property="og:title" content="Install scholR environment — prepare_environment" />
+<meta property="og:description" content="Install all packages supporting the scholR universe in the appropriate versions." />
 <meta property="og:image" content="/logo.svg" />
 
 
@@ -116,45 +116,48 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Replace a pattern in several documents</h1>
-    <small class="dont-index">Source: <a href='https://github.com/NicolasJBM/scholR/blob/master/R/replace_in_files.R'><code>R/replace_in_files.R</code></a></small>
-    <div class="hidden name"><code>replace_in_files.Rd</code></div>
+    <h1>Install scholR environment</h1>
+    <small class="dont-index">Source: <a href='https://github.com/NicolasJBM/scholR/blob/master/R/prepare_environment.R'><code>R/prepare_environment.R</code></a></small>
+    <div class="hidden name"><code>prepare_environment.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Replace the specified pattern of characters by another in all the documents within a path.</p>
+    <p>Install all packages supporting the scholR universe in the appropriate versions.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>replace_in_files</span><span class='op'>(</span><span class='va'>path</span>, <span class='va'>pattern</span>, <span class='va'>replacement</span>, type <span class='op'>=</span> <span class='st'>".Rmd"</span>, folders <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>prepare_environment</span><span class='op'>(</span>
+  cran <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  github <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  bioconductor <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  hugo <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  webshot <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>path</th>
-      <td><p>Character. Relative (from the working directory) or absolute path to the files.</p></td>
+      <th>cran</th>
+      <td><p>Logical. TRUE to install cran packages.</p></td>
     </tr>
     <tr>
-      <th>pattern</th>
-      <td><p>Character. Pattern to find and replace in each document.</p></td>
+      <th>github</th>
+      <td><p>Logical. TRUE to install github packages.</p></td>
     </tr>
     <tr>
-      <th>replacement</th>
-      <td><p>Character. Pattern to put instead.</p></td>
+      <th>bioconductor</th>
+      <td><p>Logical. TRUE to install BioConductor packages.</p></td>
     </tr>
     <tr>
-      <th>type</th>
-      <td><p>Character. Extension of the files to be processed</p></td>
+      <th>hugo</th>
+      <td><p>Logical. TRUE to install.</p></td>
     </tr>
     <tr>
-      <th>folders</th>
-      <td><p>Logical. Whether documents in sub-folders should be included.</p></td>
+      <th>webshot</th>
+      <td><p>Logical. TRUE to install.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Replace in the same folder the documents where the string was found by the same documents where the string was replaced. The change is destructive.</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Nicolas Mangin</p>

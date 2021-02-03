@@ -126,7 +126,7 @@
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>The only function in this package checks the packages already installed and adds those missing. To proceed with the installation of the environment, just type the following lines of code:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">scholR</span><span class="fu">::</span><span class="fu"><a href="reference/install_environment.html">prepare_environment</a></span><span class="op">(</span>
+<code class="sourceCode R"><span class="fu">scholR</span><span class="fu">::</span><span class="fu"><a href="reference/prepare_environment.html">prepare_environment</a></span><span class="op">(</span>
   cran <span class="op">=</span> <span class="cn">TRUE</span>,
   github <span class="op">=</span> <span class="cn">TRUE</span>,
   bioconductor <span class="op">=</span> <span class="cn">TRUE</span>,
@@ -135,7 +135,7 @@
 <span class="op">)</span></code></pre></div>
 <p>Switch the parameters “hugo” and “webshot” to TRUE only if they are not already installed on your system. This does not affect your otherwise already installed packages and only adds those missing for a proper implementation of the toolboxes presented hereafter. Here are for instance the first six entries of this package list:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/NicolasJBM/scholR">scholR</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">scholR</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"dat_packages"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dat_packages</span><span class="op">)</span> <span class="op">%&gt;%</span>
