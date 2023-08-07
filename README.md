@@ -1,10 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# scholR <img src="https://raw.githubusercontent.com/NicolasJBM/scholR/.../docs/assets/bibliogR.svg" align="right" width="100" height="100" >
+# scholR <img src="https://raw.githubusercontent.com/NicolasJBM/scholR/ddc7fecbd529ef9088295ef8aedf471014545b82/docs/assets/scholR.svg" align="right" width="100" height="100" >
 
 <!-- badges: start -->
 
+[![DOI](https://zenodo.org/badge/454038310.svg)](https://zenodo.org/badge/latestdoi/454038310)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN
