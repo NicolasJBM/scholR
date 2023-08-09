@@ -67,18 +67,130 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The goal of scholR is to …</p>
+<p>The goal of <em>scholR</em> is to help you install suites of packages, files, and applications useful to conduct academic work, more specifically course management and study management. It is the entry point to an R environment (or “universe”) designed so that anyone can practice education and research in a free, open, diverse, inclusive, and collaborative way. This package also includes various functions helping me in package creation and maintenance.</p>
+<div class="section level2">
+<h2 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
+</h2>
+<p>To use scholR, you will need to install first a set of supporting pieces of software:</p>
+<ul>
+<li><a href="https://cran.rstudio.com/" target="_blank" class="external-link">R</a></li>
+<li>
+<a href="https://cran.r-project.org/bin/windows/Rtools/" target="_blank" class="external-link">Rtools</a> (only on Windows)</li>
+<li><a href="https://posit.co/download/rstudio-desktop/" target="_blank" class="external-link">RStudio</a></li>
+<li><a href="https://quarto.org/docs/get-started/" target="_blank" class="external-link">Quarto</a></li>
+</ul>
+</div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of scholR from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>Then, you can install the development version of scholR from <a href="https://github.com/" target="_blank" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"NicolasJBM/scholR"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"NicolasJBM/scholR"</span><span class="op">)</span></span></code></pre></div>
+<p>There is so far no CRAN version, but I plan to release this set of packages on CRAN once each of them stands alone and properly and fully documented.</p>
 </div>
 <div class="section level2">
-<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+<h2 id="installation-of-the-education-suite">Installation of the education suite<a class="anchor" aria-label="anchor" href="#installation-of-the-education-suite"></a>
 </h2>
+<p>To install the education suite, use the following command lines:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">scholR</span><span class="fu">::</span><span class="fu"><a href="reference/install_scholR.html">install_scholR</a></span><span class="op">(</span></span>
+<span>  preinstall_requisites <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  install_for_education <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  keep_existing <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>“preinstall_requisites” set to “TRUE” means that all required packages will be installed before the scholR education packages themselves.</p>
+<p>“install_for_education” set to “TRUE” means that all packages useful for education, and only packages useful for edication, will be installed. These packages are the following (the order of installation matters as there are dependencies between packages):</p>
+<ul>
+<li><a href="https://nicolasjbm.github.io/bibliogR/" target="_blank" class="external-link">bibliogR</a></li>
+<li><a href="https://nicolasjbm.github.io/chartR/" target="_blank" class="external-link">chartR</a></li>
+<li><a href="https://nicolasjbm.github.io/classR/" target="_blank" class="external-link">classR</a></li>
+<li><a href="https://nicolasjbm.github.io/editR/" target="_blank" class="external-link">editR</a></li>
+<li><a href="https://nicolasjbm.github.io/teachR/" target="_blank" class="external-link">teachR</a></li>
+<li><a href="https://nicolasjbm.github.io/testR/" target="_blank" class="external-link">testR</a></li>
+<li><a href="https://nicolasjbm.github.io/gradR/" target="_blank" class="external-link">gradR</a></li>
+<li><a href="https://nicolasjbm.github.io/reportR/" target="_blank" class="external-link">reportR</a></li>
+</ul>
+<p>Finally, “keep_existing” set to “TRUE” means that if a required package is already installed it will not be installed again, even if an more recent release is available.</p>
+</div>
+<div class="section level2">
+<h2 id="installation-of-the-research-suite">Installation of the research suite<a class="anchor" aria-label="anchor" href="#installation-of-the-research-suite"></a>
+</h2>
+<p>This part of the environment is <strong>not available yet</strong>, but coming soon. It will contain the following packages:</p>
+<ul>
+<li><a href="https://nicolasjbm.github.io/bibliogR/" target="_blank" class="external-link">bibliogR</a></li>
+<li>researchR</li>
+<li>reviewR</li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="creation-of-programs-and-projects">Creation of programs and projects<a class="anchor" aria-label="anchor" href="#creation-of-programs-and-projects"></a>
+</h2>
+<p>Once you have installed the complete scholR suite for either/both education and research, you can create a program (folder containing a set of courses or studies) and within this program various projects (folders for either courses or studies). For this, I designed a shiny gadget function called “<em>create_new()</em>”. You can launch this gadget from the command line:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">scholR</span><span class="fu">::</span><span class="fu"><a href="reference/create_new.html">create_new</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>or use the addin in RStudio:</p>
+<p><img src="https://raw.githubusercontent.com/NicolasJBM/scholR/main/docs/assets/scholR-create_new.gif"></p>
+<p>This gadget will help you perform several tasks. First, it will create a program folder if it does not already exist. Then, it will create within this program folder a reference database, only if it does not already exist.</p>
+<p>If the type of project is set to “Course”, the gadget will add the application <em>“manage_course.R”</em> (again, if it does not already exist) and a course folder with the appropriate structure, all the necessary files, and named according to the user input. It will also create or update a .csv file indicating the path to the course on the local disk. You are then ready to start building your teaching, learning, and testing materials.</p>
+<p>I have chosen to have the application as a file on disk rather than a function in a package because this facilitates working directory management and also allows the user to customize (more specifically simplify) the user interface.</p>
+</div>
+<div class="section level2">
+<h2 id="using-the-applications">Using the applications<a class="anchor" aria-label="anchor" href="#using-the-applications"></a>
+</h2>
+<p>To use the applications you have installed, you now just have to open one of them (manage_course.R or manage_study.R) and run the application:</p>
+<p><img src="https://raw.githubusercontent.com/NicolasJBM/scholR/main/docs/assets/scholR-run_manage_course.gif"></p>
+<p>The actual use of applications is describe and explained in dedicated user guides:</p>
+<ul>
+<li><a href="" target="_blank">for course management</a></li>
+<li><a href="" target="_blank">for study management</a></li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="other-functions-you-might-find-useful">Other functions you might find useful<a class="anchor" aria-label="anchor" href="#other-functions-you-might-find-useful"></a>
+</h2>
+<p>The <em>scholR</em> package also contains some functions I use in package design and maintenance, and sometimes for other purposes as well.</p>
+<p>The function <em>“list_used_packages_and_functions()”</em> scan files in a specified folder and make a list of all the packages and functions used in these files. Note that this assumes that each function is called preceded by it package, so that you use he synthax “packageName::functionName()” when you write code.</p>
+<p>The function <em>“open_files_containing_pattern.R”</em> scan files in a specified folder and open in RStudio any file containing the specified regex pattern.</p>
+<p>Finally, the function <em>“replace_pattern_in_files.R”</em> scan files in a specified folder and replace a regex pattern by the specified replacement in all files.</p>
+</div>
+<div class="section level2">
+<h2 id="databases">Databases<a class="anchor" aria-label="anchor" href="#databases"></a>
+</h2>
+<p>The <em>scholR</em> package finally contains some databases useful for the installation of the whole environment.</p>
+<p>The data.frame <em>references</em> contains the references to the scholR packages. The table is formatted to be compatible with the bibliogR system of reference management.</p>
+<p>The data.frame <em>require_packages</em> contains a list of packages used by scholR packages with the version I have installed on my computer. Should you encounter some issues with one of these packages because of an update, try installing the older version with the following command line:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_version.html" class="external-link">install_version</a></span><span class="op">(</span></span>
+<span>  package <span class="op">=</span> <span class="st">"DiagrammeR"</span>, <span class="co"># Replace by the appropriate package name</span></span>
+<span>  version <span class="op">=</span> <span class="st">"1.0.10"</span> <span class="co"># Replace by the corresponding version</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="common-fixes-to-known-issues">Common fixes to known issues<a class="anchor" aria-label="anchor" href="#common-fixes-to-known-issues"></a>
+</h2>
+<p>This section is a work in progress. Of course, I correct issues in my own code - but sometimes the issue lies in applications I do not control… and therefore ends up in this section. I will enrich it as I become aware of more external issues for which I identify fixes which I cannot embed in my code. Hopefully it will remain short…</p>
+<div class="section level3">
+<h3 id="sweave-not-found">Sweave not found<a class="anchor" aria-label="anchor" href="#sweave-not-found"></a>
+</h3>
+<p>If you encounter issues in printing PDF documents, you may also have to install one of the following additional supporting pieces of software:</p>
+<ul>
+<li>
+<a href="https://miktex.org/" target="_blank" class="external-link">MiKTeX</a> (preferred on Windows based on my experience){target=“_blank”} or</li>
+<li>
+<a href="https://tug.org/texlive/" target="_blank" class="external-link">TeX Live</a> (preferred on Mac based on my experience){target=“_blank”}.</li>
+</ul>
+<p>Note that the link between R and Latex might sometimes get missing or broken on Windows. When trying to print PDF documents, you might then have the following error message:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>Latex Error<span class="sc">:</span> <span class="st">'Sweave.sty'</span> not found</span></code></pre></div>
+<p>I found the solution to this issue on <a href="https://tex.stackexchange.com/questions/153193/latex-error-sweave-sty-not-found" target="_blank" class="external-link">this blog post</a>. After a small adaptation to a more recent version of both MiKTeX and Windows, the procedure to properly map the texmf directory to Miktex’s root directory in Windows 11 is as follow:</p>
+<ol style="list-style-type: decimal">
+<li>Locate the texmf directory inside the share folder in R. For me, the path was C:Files.2but this can change from user to user.</li>
+<li>Launch Miktex’s Options via the start menu or by locating this exectuable C:Files-console_admin.exe.</li>
+<li>Click on the “Settings” tab and click “+” /// now just click on “setting”</li>
+<li>Map the folder path to texmf that you located earlier.</li>
+<li>If you receive an error about the file being in use, make sure to close out of any open session of TeXworks.</li>
+<li>Click “Ok” and you’re set to go.</li>
+</ol>
+</div>
 </div>
 </div>
   </div>
