@@ -44,7 +44,7 @@ create_new <- function() {
       shiny::textInput("defprogramname", "Program name:", width = "100%"),
       shiny::tags$hr(),
       shiny::textInput("defprojectname", "Project name:", width = "100%"),
-      shiny::radioButtons("slcttype", "Project type:", choices = c("Course","Investigation")),
+      shiny::radioButtons("slcttype", "Project type:", choices = c("Course","Study")),
       shiny::actionButton(
         "create", "Create", icon = shiny::icon("wand-magic-sparkles"),
         style = "width:100%; background-color:#009; color:#FFF; margin-top:25px;"
@@ -102,7 +102,7 @@ create_new <- function() {
         )
       } else {
         tibble::tibble(
-          investigation = input$defprojectname,
+          study = input$defprojectname,
           path = project_folder()
         )
       }

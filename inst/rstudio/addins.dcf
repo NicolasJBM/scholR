@@ -1,0 +1,4 @@
+Name: Create programs or projects
+Description: Create new programs or projects
+Binding: create_new
+Interactive: true

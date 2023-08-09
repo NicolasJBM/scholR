@@ -54,8 +54,10 @@ install_scholR <- function(
       base::unique()
   }
   
-  install_from_cran <- cran_packages |>
-    dplyr::bind_rows(required_packages)
+  if (preinstall_requisites){
+    install_from_cran <- cran_packages |>
+      dplyr::bind_rows(required_packages)
+  } else install_from_cran <- cran_packages
   
   for (i in base::seq_len(base::nrow(install_from_cran))){
     utils::install.packages(install_from_cran$Package[i])
