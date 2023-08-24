@@ -79,12 +79,15 @@
 <li><a href="https://posit.co/download/rstudio-desktop/" target="_blank" class="external-link">RStudio</a></li>
 <li><a href="https://quarto.org/docs/get-started/" target="_blank" class="external-link">Quarto</a></li>
 </ul>
+<p>Since all scholR packages are hosted on GitHub only for now, you will need devtools to install them. Copy and paste the following command line in the Rstudio console:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>Then, you can install the development version of scholR from <a href="https://github.com/" target="_blank" class="external-link">GitHub</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"NicolasJBM/scholR"</span><span class="op">)</span></span></code></pre></div>
 <p>There is so far no CRAN version, but I plan to release this set of packages on CRAN once each of them stands alone and properly and fully documented.</p>
 </div>
@@ -92,7 +95,7 @@
 <h2 id="installation-of-the-education-suite">Installation of the education suite<a class="anchor" aria-label="anchor" href="#installation-of-the-education-suite"></a>
 </h2>
 <p>To install the education suite, use the following command lines:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">scholR</span><span class="fu">::</span><span class="fu"><a href="reference/install_scholR.html">install_scholR</a></span><span class="op">(</span></span>
 <span>  preinstall_requisites <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  install_for_education <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -126,7 +129,7 @@
 <h2 id="creation-of-programs-and-projects">Creation of programs and projects<a class="anchor" aria-label="anchor" href="#creation-of-programs-and-projects"></a>
 </h2>
 <p>Once you have installed the complete scholR suite for either/both education and research, you can create a program (folder containing a set of courses or studies) and within this program various projects (folders for either courses or studies). For this, I designed a shiny gadget function called “<em>create_new()</em>”. You can launch this gadget from the command line:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/NicolasJBM/scholR" class="external-link">scholR</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/" class="external-link">shiny</a></span><span class="op">)</span></span>
 <span><span class="fu">scholR</span><span class="fu">::</span><span class="fu"><a href="reference/create_new.html">create_new</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -161,7 +164,7 @@
 <p>The <em>scholR</em> package finally contains some databases useful for the installation of the whole environment.</p>
 <p>The data.frame <em>references</em> contains the references to the scholR packages. The table is formatted to be compatible with the bibliogR system of reference management.</p>
 <p>The data.frame <em>require_packages</em> contains a list of packages used by scholR packages with the version I have installed on my computer. Should you encounter some issues with one of these packages because of an update, try installing the older version with the following command line:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_version.html" class="external-link">install_version</a></span><span class="op">(</span></span>
 <span>  package <span class="op">=</span> <span class="st">"DiagrammeR"</span>, <span class="co"># Replace by the appropriate package name</span></span>
 <span>  version <span class="op">=</span> <span class="st">"1.0.10"</span> <span class="co"># Replace by the corresponding version</span></span>
@@ -181,14 +184,14 @@
 <li>
 <a href="https://tug.org/texlive/" target="_blank" class="external-link">TeX Live</a> (preferred on Mac based on my experience){target=“_blank”}.</li>
 </ul>
-<p>Note that the link between R and Latex might sometimes get missing or broken on Windows. When trying to print PDF documents, you might then have the following error message:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>Latex Error<span class="sc">:</span> <span class="st">'Sweave.sty'</span> not found</span></code></pre></div>
+<p>Note that the link between R and Latex might sometimes get missing or broken on Windows when you update R. When trying to print PDF documents, you might then have the following error message:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>Latex Error<span class="sc">:</span> <span class="st">'Sweave.sty'</span> not found</span></code></pre></div>
 <p>I found the solution to this issue on <a href="https://tex.stackexchange.com/questions/153193/latex-error-sweave-sty-not-found" target="_blank" class="external-link">this blog post</a>. After a small adaptation to a more recent version of both MiKTeX and Windows, the procedure to properly map the texmf directory to Miktex’s root directory in Windows 11 is as follow:</p>
 <ol style="list-style-type: decimal">
-<li>Locate the texmf directory inside the share folder in R. For me, the path was C:Files.2but this can change from user to user.</li>
-<li>Launch Miktex’s Options via the start menu or by locating this exectuable C:Files-console_admin.exe.</li>
+<li>Locate the texmf directory inside the share folder in R. For me, the path was ‘C:/Program Files/R/R-4.3.1/share/texmf’ but this can change from user to user.</li>
+<li>Launch Miktex’s Options via the start menu or by locating this exectuable C:/Program Files/MiKTeX 2.9/miktex/bin/x64/miktex-console_admin.exe.</li>
 <li>Click on the “Settings” tab and click “+” /// now just click on “setting”</li>
-<li>Map the folder path to texmf that you located earlier.</li>
+<li>Go in the “Directories” tab and Map the folder path to texmf that you located earlier.</li>
 <li>If you receive an error about the file being in use, make sure to close out of any open session of TeXworks.</li>
 <li>Click “Ok” and you’re set to go.</li>
 </ol>
