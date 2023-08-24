@@ -95,6 +95,8 @@ This part of the environment is **not available yet**, but coming soon. It will 
 Once you have installed the complete scholR suite for either/both education and research, you can create a program (folder containing a set of courses or studies) and within this program various projects (folders for either courses or studies). For this, I designed a shiny gadget function called "*create_new()*". You can launch this gadget from the command line:  
 
 ```{r eval=FALSE}
+library(scholR)
+library(shiny)
 scholR::create_new()
 ```
 

@@ -66,8 +66,15 @@ create_new <- function() {
     
     root_folder <- shiny::reactive({
       shiny::req(!base::is.null(input$directory))
-      path <- base::unlist(input$directory)
-      path <- path[-base::length(path)]
+      
+      if (.Platform['OS.type'] == "windows"){
+        path <- base::unlist(input$directory)
+        path[1] <- base::gsub(".+\\(|\\)", "", path[base::length(path)])
+        path <- path[-base::length(path)]
+      } else {
+        path <- base::unlist(input$directory)
+        path <- path[-base::length(path)]
+      }
       base::paste(path, collapse = "/")
     })
     
@@ -191,6 +198,4 @@ create_new <- function() {
   
   shiny::runGadget(ui, server)
 }
-
-# scholR::list_used_packages_and_functions() |> dplyr::filter(file == "R/create_new.R") |> dplyr::select(import) |> base::unlist() |> base::as.character() |> writeLines()
 

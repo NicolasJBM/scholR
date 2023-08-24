@@ -106,6 +106,8 @@ gadget function called “*create_new()*”. You can launch this gadget from
 the command line:
 
 ``` r
+library(scholR)
+library(shiny)
 scholR::create_new()
 ```
 
