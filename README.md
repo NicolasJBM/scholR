@@ -35,6 +35,14 @@ of software:
 - <a href="https://quarto.org/docs/get-started/"
   target="_blank">Quarto</a>
 
+Since all scholR packages are hosted on GitHub only for now, you will
+need devtools to install them. Copy and paste the following command line
+in the Rstudio console:
+
+``` r
+utils::install.packages("devtools")
+```
+
 ## Installation
 
 Then, you can install the development version of scholR from
@@ -206,8 +214,8 @@ install one of the following additional supporting pieces of software:
   (preferred on Mac based on my experience){target=“\_blank”}.
 
 Note that the link between R and Latex might sometimes get missing or
-broken on Windows. When trying to print PDF documents, you might then
-have the following error message:
+broken on Windows when you update R. When trying to print PDF documents,
+you might then have the following error message:
 
     !Latex Error: 'Sweave.sty' not found
 
@@ -219,12 +227,15 @@ the texmf directory to Miktex’s root directory in Windows 11 is as
 follow:
 
 1.  Locate the texmf directory inside the share folder in R. For me, the
-    path was C:Files.2but this can change from user to user.
+    path was ‘C:/Program Files/R/R-4.3.1/share/texmf’ but this can
+    change from user to user.
 2.  Launch Miktex’s Options via the start menu or by locating this
-    exectuable C:Files-console_admin.exe.
+    exectuable C:/Program Files/MiKTeX
+    2.9/miktex/bin/x64/miktex-console_admin.exe.
 3.  Click on the “Settings” tab and click “+” /// now just click on
     “setting”
-4.  Map the folder path to texmf that you located earlier.
+4.  Go in the “Directories” tab and Map the folder path to texmf that
+    you located earlier.
 5.  If you receive an error about the file being in use, make sure to
     close out of any open session of TeXworks.
 6.  Click “Ok” and you’re set to go.

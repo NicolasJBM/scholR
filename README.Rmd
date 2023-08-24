@@ -37,6 +37,11 @@ To use scholR, you will need to install first a set of supporting pieces of soft
 - [RStudio](https://posit.co/download/rstudio-desktop/){target="_blank"}
 - [Quarto](https://quarto.org/docs/get-started/){target="_blank"}
 
+Since all scholR packages are hosted on GitHub only for now, you will need devtools to install them. Copy and paste the following command line in the Rstudio console:  
+
+```{r eval=FALSE}
+utils::install.packages("devtools")
+```
 
 
 ## Installation
@@ -167,7 +172,7 @@ If you encounter issues in printing PDF documents, you may also have to install 
 - [MiKTeX](https://miktex.org/){target="_blank"} (preferred on Windows based on my experience){target="_blank"} or
 - [TeX Live](https://tug.org/texlive/){target="_blank"} (preferred on Mac based on my experience){target="_blank"}.  
 
-Note that the link between R and Latex might sometimes get missing or broken on Windows. When trying to print PDF documents, you might then have the following error message:
+Note that the link between R and Latex might sometimes get missing or broken on Windows when you update R. When trying to print PDF documents, you might then have the following error message:
 
 ```
 !Latex Error: 'Sweave.sty' not found
@@ -175,10 +180,10 @@ Note that the link between R and Latex might sometimes get missing or broken on 
 
 I found the solution to this issue on [this blog post](https://tex.stackexchange.com/questions/153193/latex-error-sweave-sty-not-found){target="_blank"}. After a small adaptation to a more recent version of both MiKTeX and Windows, the procedure to properly map the texmf directory to Miktex's root directory in Windows 11 is as follow:  
 
-1. Locate the texmf directory inside the share folder in R. For me, the path was C:\Program Files\R\R-3.0.2\share\texmf but this can change from user to user.
-2. Launch Miktex's Options via the start menu or by locating this exectuable C:\Program Files\MiKTeX 2.9\miktex\bin\x64\miktex-console_admin.exe.
+1. Locate the texmf directory inside the share folder in R. For me, the path was 'C:/Program Files/R/R-4.3.1/share/texmf' but this can change from user to user.
+2. Launch Miktex's Options via the start menu or by locating this exectuable C:/Program Files/MiKTeX 2.9/miktex/bin/x64/miktex-console_admin.exe.
 3. Click on the "Settings" tab and click "+" /// now just click on "setting"
-4. Map the folder path to texmf that you located earlier.
+4. Go in the "Directories" tab and Map the folder path to texmf that you located earlier.
 5. If you receive an error about the file being in use, make sure to close out of any open session of TeXworks.
 6. Click "Ok" and you're set to go.
 
