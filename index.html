@@ -127,7 +127,9 @@
 </h2>
 <p>Once you have installed the complete scholR suite for either/both education and research, you can create a program (folder containing a set of courses or studies) and within this program various projects (folders for either courses or studies). For this, I designed a shiny gadget function called “<em>create_new()</em>”. You can launch this gadget from the command line:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">scholR</span><span class="fu">::</span><span class="fu"><a href="reference/create_new.html">create_new</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/NicolasJBM/scholR" class="external-link">scholR</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/" class="external-link">shiny</a></span><span class="op">)</span></span>
+<span><span class="fu">scholR</span><span class="fu">::</span><span class="fu"><a href="reference/create_new.html">create_new</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>or use the addin in RStudio:</p>
 <p><img src="https://raw.githubusercontent.com/NicolasJBM/scholR/main/docs/assets/scholR-create_new.gif"></p>
 <p>This gadget will help you perform several tasks. First, it will create a program folder if it does not already exist. Then, it will create within this program folder a reference database, only if it does not already exist.</p>
