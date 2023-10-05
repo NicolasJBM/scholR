@@ -10,11 +10,9 @@
 
 open_files_containing_pattern <- function(path, pattern){
   
-  string <- NULL
-  
   files <- base::list.files(path, full.names = TRUE)
   for (file in files){
     lines <- base::readLines(file)
-    if (any(stringr::str_detect(lines, string))) rstudioapi::navigateToFile(file)
+    if (any(stringr::str_detect(lines, pattern))) rstudioapi::navigateToFile(file)
   }
 }

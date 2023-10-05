@@ -49,6 +49,7 @@ utils::install.packages("devtools")
 Then, you can install the development version of scholR from [GitHub](https://github.com/){target="_blank"} with:
 
 ```{r eval=FALSE}
+library(scholR)
 devtools::install_github("NicolasJBM/scholR")
 ```
 

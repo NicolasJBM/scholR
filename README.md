@@ -49,6 +49,7 @@ Then, you can install the development version of scholR from
 <a href="https://github.com/" target="_blank">GitHub</a> with:
 
 ``` r
+library(scholR)
 devtools::install_github("NicolasJBM/scholR")
 ```
 
