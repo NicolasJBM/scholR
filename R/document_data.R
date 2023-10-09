@@ -21,6 +21,7 @@ document_data <- function(x = NULL, datname = NULL, path = "R"){
   
   base::writeLines(c(
     base::paste0("#' @name ", datname),
+    base::paste0("#' @title ", datname),
     base::paste0("#' @format A data frame with ", base::nrow(x), " rows and ", base::ncol(x), " variables"),
     "#' \\itemize{",
     base::paste("#'   \\item ", variables, " ", classes),
