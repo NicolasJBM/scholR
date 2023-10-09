@@ -44,6 +44,8 @@ create_new <- function() {
       shiny::textInput("defprogramname", "Program name:", width = "100%"),
       shiny::tags$hr(),
       shiny::textInput("defprojectname", "Project name:", width = "100%"),
+      shiny::tags$hr(),
+      shiny::textInput("defdatfunpkgname", "Name of the data and function package:", width = "100%"),
       shiny::radioButtons("slcttype", "Project type:", choices = c("Course","Study")),
       shiny::actionButton(
         "create", "Create", icon = shiny::icon("wand-magic-sparkles"),
@@ -150,7 +152,6 @@ create_new <- function() {
           )
           utils::unzip(manage_course_destination, exdir = program_folder())
           base::file.remove(manage_course_destination)
-
         }
         
         if (!base::dir.exists(course_folder)){
@@ -172,6 +173,22 @@ create_new <- function() {
               dplyr::bind_rows(add_to_project_folders()) |>
               utils::write.csv(file = course_path_file, row.names = FALSE)
           }
+          
+          
+          if (input$defdatfunpkgname != ""){
+            dfname <- input$defdatfunpkgname
+          } else {
+            dfname <- base::paste0("df_", input$defprojectname)
+          }
+          
+          datfunpkg_path <- base::paste0(course_folder, "/edition/data/datfunpkg")
+          datfundesc_path <- base::paste0(datfunpkg_path, "/DESCRIPTION")
+          base::readLines(datfundesc_path) |>
+            stringr::str_replace_all("datfunpkg", dfname) |>
+            base::writeLines(datfundesc_path)
+          
+          datfunproj_path <- base::paste0(datfunpkg_path, "/datfunpkg.Rproj")
+          base::file.rename(datfunproj_path, stringr::str_replace(datfunproj_path, "datfunpkg.Rproj$", base::paste0(dfname, ".Rproj")))
           
           shinyalert::shinyalert(
             title = "New project created",
