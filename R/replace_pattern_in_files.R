@@ -11,6 +11,7 @@
 
 replace_pattern_in_files <- function(path, pattern, replacement){
   files <- base::list.files(path, full.names = TRUE)
+  files <- files[stringr::str_detect(files, "\\.R$|\\.Rmd|\\.Qmd")]
   for (file in files){
     lines <- base::readLines(file)
     if (base::any(stringr::str_detect(lines, pattern))) {
